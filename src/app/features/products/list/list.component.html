@@ -1,0 +1,32 @@
+<div class="main-content-wrap">
+    <div class="container">
+        <div class="shop-topbar">
+            <div class="filter-container">
+                <div class="filter-btn customize-scrollbar">
+                    <span class="material-symbols-outlined"> tune </span>
+                    <span>Bộ lọc</span>
+                </div>
+            </div>
+
+            <div class="product-sort">
+                <select class="form-select form-select-sm">
+                    <option value="newest" selected>Mới nhất</option>
+                    <option value="oldest">Cũ nhất</option>
+                    <option value="highPopular">Phổ biến</option>
+                    <option value="priceASC">Giá (Thấp -> Cao)</option>
+                    <option value="priceDESC">Giá (Cao -> Thấp)</option>
+                    <option value="highRating">Đánh giá cao</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="shop-products-wrap">
+            <div class="product-grid">
+                <ng-container
+                    *ngFor="let product of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+                    <app-product-card></app-product-card>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

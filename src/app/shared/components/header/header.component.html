@@ -1,0 +1,73 @@
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-box">
+                <div class="logo">
+                    <div class="logo-area">
+                        <img
+                            src="https://www.watchstore.vn/upload/image/logo-watchstore.webp"
+                            alt="logo" />
+                    </div>
+                </div>
+
+                <div class="input-search">
+                    <div class="search-box-wrapper">
+                        <input
+                            type="text"
+                            placeholder="Tìm kiếm theo tên sản phẩm..." />
+                        <div class="search-btn">
+                            <button>
+                                <span class="material-symbols-outlined">
+                                    search
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-action-container">
+                    <div class="header-action">
+                        <div class="cart-wrapper">
+                            <a>
+                                <span class="material-symbols-outlined">
+                                    shopping_cart
+                                </span>
+
+                                <span class="badge-count">0</span>
+                            </a>
+                        </div>
+                        <div class="auth-btn">
+                            <button>Đăng nhập</button>
+                            <div class="line"></div>
+                            <button>Đăng ký</button>
+                        </div>
+
+                        <div
+                            class="mobile-menu-icon"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample"
+                            aria-controls="offcanvasExample">
+                            <span class="material-symbols-outlined">
+                                menu
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom-box">
+                <nav class="main-navigation">
+                    <ul>
+                        <li *ngFor="let item of NAV_LIST">
+                            <a>{{ item }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

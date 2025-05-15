@@ -1,0 +1,8 @@
+<div *ngIf="product">
+    <h2>{{ product.name }}</h2>
+    <img [src]="product.image" />
+    <p>{{ product.description }}</p>
+    <p>{{ product.price | number }} VNĐ</p>
+    <p>{{ product.inStock ? "Còn hàng" : "Hết hàng" }}</p>
+    <button (click)="back()">Quay lại</button>
+</div>
