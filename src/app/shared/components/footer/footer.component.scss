@@ -1,93 +1,99 @@
 .footer {
-  background-color: #f5f3f2;
-  color: #767676;
-}
+    background-color: #f5f3f2;
+    color: #767676;
 
-.footer-top {
-  padding: 3rem 0;
-}
+    &__top {
+        padding: 3rem 0;
+    }
 
-.footer-top-box {
-  display: flex;
-}
+    &__top-inner {
+        display: flex;
+    }
 
-.about {
-  width: 25%;
-}
+    &__about {
+        width: 25%;
+    }
 
-.title-widget {
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-}
+    &__widget-title {
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
 
-.footer-list li{
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-}
+    &__widget-list li {
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+    }
 
-.social-icons {
-  margin-top: 20px;
-}
+    &__privacy {
+        width: 25%;
+    }
 
-.social-icon {
-  color: #fff;
-}
+    &__address {
+        width: 33.33%;
+    }
 
-.privacy {
-  width: 25%;
-}
+    &__contact {
+        width: 16.6667%;
+    }
 
-.address {
-  width: 33.33%;
-}
+    &__bottom {
+        border-top: 1px solid #d1d1d1;
+        padding: 1.5rem 0;
+    }
 
-.contact {
-  width: 16.6667%;
-}
+    &__bottom-inner {
+        display: flex;
+        align-items: center;
+    }
 
-.footer-bottom {
-  border-top: 1px solid #d1d1d1;
-  padding: 1.5rem 0;
-}
+    &__left,
+    &__right {
+        width: 50%;
+    }
 
-.footer-bottom-box {
-  display: flex;
-  align-items: center;
+    &__right {
+        text-align: end;
+    }
 
-  .left-side, .right-side {
-    width: 50%;
-  }
-}
+    @media (max-width: 1024px) {
+        &__top-inner {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
 
- @media (max-width: 1024px) {
- .footer-top-box {
-  flex-direction: column;
-  flex-wrap: wrap;
- }
+        footer__about,
+        footer__privacy,
+        footer__address,
+        footer__contact {
+            width: 100%;
+        }
 
- .about, .privacy, .address, .contact {
-    width: 100%;
-  }
+        &__widget:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
 
-  .widget-footer:not(:last-child) {
-    margin-bottom: 1.5rem;
-  }
+        &__widget-title {
+            margin-bottom: 12px;
+        }
 
-  .title-widget {
-    margin-bottom: 12px;
-  }
+        &__bottom {
+            padding-bottom: 79px;
+            padding-top: 12px;
+        }
 
-  .footer-bottom {
-    padding-bottom: 79px;
-    padding-top: 12px;
-  }
+        &__bottom-inner {
+            flex-wrap: wrap;
+        }
 
-  .footer-bottom-box{
-    flex-wrap: wrap;
+        &__left,
+        &__right {
+            width: 100%;
+            text-align: center;
+        }
 
-    .left-side, .right-side {
-      width: 100%;
-  }
-  }
+        &__left {
+            margin-top: 0.5rem;
+        }
+    }
 }

@@ -1,30 +1,32 @@
-<div class="main-content-wrap">
+<div class="list">
     <div class="container">
-        <div class="shop-topbar">
-            <div class="filter-container">
-                <div class="filter-btn customize-scrollbar">
+        <div class="list__topbar">
+            <div class="list__filter">
+                <div class="list__filter-btn customize-scrollbar">
                     <span class="material-symbols-outlined"> tune </span>
                     <span>Bộ lọc</span>
                 </div>
             </div>
 
-            <div class="product-sort">
+            <div class="list__sort">
                 <select class="form-select form-select-sm">
-                    <option value="newest" selected>Mới nhất</option>
-                    <option value="oldest">Cũ nhất</option>
-                    <option value="highPopular">Phổ biến</option>
-                    <option value="priceASC">Giá (Thấp -> Cao)</option>
-                    <option value="priceDESC">Giá (Cao -> Thấp)</option>
-                    <option value="highRating">Đánh giá cao</option>
+                    <ng-container *ngFor="let item of SORT_LIST">
+                        <option [value]="item.value" selected>
+                            {{ item.label }}
+                        </option>
+                    </ng-container>
                 </select>
             </div>
         </div>
 
-        <div class="shop-products-wrap">
-            <div class="product-grid">
-                <ng-container
-                    *ngFor="let product of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
-                    <app-product-card></app-product-card>
+        <div class="list__wrapper">
+            <div class="list__grid">
+                <ng-container *ngFor="let product of products">
+                    <product-card
+                        [product]="product"
+                        (directDetailEvent)="
+                            handleRedirectDetail($event)
+                        "></product-card>
                 </ng-container>
             </div>
         </div>

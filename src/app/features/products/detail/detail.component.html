@@ -1,8 +1,82 @@
-<div *ngIf="product">
-    <h2>{{ product.name }}</h2>
-    <img [src]="product.image" />
-    <p>{{ product.description }}</p>
-    <p>{{ product.price | number }} VNĐ</p>
-    <p>{{ product.inStock ? "Còn hàng" : "Hết hàng" }}</p>
-    <button (click)="back()">Quay lại</button>
+<div class="detail">
+    <div class="container">
+        <button class="detail__back-btn" (click)="back()">
+            <span class="material-symbols-outlined"> arrow_back </span>
+            <span>Quay lại</span>
+        </button>
+        <div class="detail__inner">
+            <div class="detail__gallery-inner">
+                <div class="gallery">
+                    <div class="detail__gallery-main">
+                        <img [src]="product?.image" [alt]="product?.name" />
+                    </div>
+
+                    <div class="detail__gallery-thumb">
+                        <ng-container *ngFor="let item of MOCK_THUMB_LIST">
+                            <div class="detail__gallery-thumb--item">
+                                <img [src]="item.image" [alt]="item.name" />
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail__info">
+                <div class="detail__info-name">
+                    <h3>
+                        {{ product?.name }}
+                    </h3>
+                    <div class="detail__group">
+                        <div class="detail__group-item">
+                            <span>Thương hiệu: Something 17</span>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        </div>
+                        <div class="detail__group-item">
+                            <span>Tình trạng: Còn hàng</span>
+                        </div>
+                    </div>
+                    <div class="detail__price-inner">
+                        <div class="detail__price">
+                            {{ product?.price | formatPrice }}đ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail__select">
+                    <h6>Kích thước:</h6>
+                    <div class="detail__size-list">
+                        <ng-container *ngFor="let size of MOCK_SIZE_LIST">
+                            <div class="detail__size-item">
+                                <input type="radio" />
+                                <label [class.active]="size.active">{{
+                                    size.label
+                                }}</label>
+                            </div></ng-container
+                        >
+                    </div>
+                </div>
+
+                <div class="detail__add">
+                    <h6>Số lượng:</h6>
+                    <form class="detail__quantity-inner">
+                        <div class="detail__plus-minus">
+                            <input
+                                type="number"
+                                class="input-text"
+                                min="1"
+                                max="50"
+                                [defaultValue]="1" />
+                        </div>
+                        <button type="submit">Thêm vào giỏ hàng</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <app-detail-tab></app-detail-tab>
+
+        <app-related-product></app-related-product>
+
+        <app-popular-product></app-popular-product>
+    </div>
 </div>

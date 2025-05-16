@@ -1,21 +1,19 @@
-<header>
-    <div class="header-top">
+<header class="header">
+    <div class="header__top">
         <div class="container">
-            <div class="header-top-box">
-                <div class="logo">
-                    <div class="logo-area">
-                        <img
-                            src="https://www.watchstore.vn/upload/image/logo-watchstore.webp"
-                            alt="logo" />
+            <div class="header__top-inner">
+                <div class="header__logo">
+                    <div class="header__logo-image">
+                        <img src="/assets/images/logo.png" alt="logo" />
                     </div>
                 </div>
 
-                <div class="input-search">
-                    <div class="search-box-wrapper">
+                <div class="header__search">
+                    <div class="header__search-box">
                         <input
                             type="text"
                             placeholder="Tìm kiếm theo tên sản phẩm..." />
-                        <div class="search-btn">
+                        <div class="header__search-btn">
                             <button>
                                 <span class="material-symbols-outlined">
                                     search
@@ -25,25 +23,25 @@
                     </div>
                 </div>
 
-                <div class="header-action-container">
-                    <div class="header-action">
-                        <div class="cart-wrapper">
+                <div class="header__actions">
+                    <div class="header__cart">
+                        <div class="header__cart-wrapper">
                             <a>
                                 <span class="material-symbols-outlined">
                                     shopping_cart
                                 </span>
 
-                                <span class="badge-count">0</span>
+                                <span class="header__badge">0</span>
                             </a>
                         </div>
-                        <div class="auth-btn">
+                        <div class="header__auth">
                             <button>Đăng nhập</button>
-                            <div class="line"></div>
+                            <div class="header__divider"></div>
                             <button>Đăng ký</button>
                         </div>
 
                         <div
-                            class="mobile-menu-icon"
+                            class="header__mobile-menu"
                             data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasExample"
                             aria-controls="offcanvasExample">
@@ -57,10 +55,10 @@
         </div>
     </div>
 
-    <div class="header-bottom">
+    <div class="header__bottom">
         <div class="container">
-            <div class="header-bottom-box">
-                <nav class="main-navigation">
+            <div class="header__bottom-inner">
+                <nav class="header__nav">
                     <ul>
                         <li *ngFor="let item of NAV_LIST">
                             <a>{{ item }}</a>
