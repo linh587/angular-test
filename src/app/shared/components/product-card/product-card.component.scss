@@ -100,4 +100,17 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    &__label {
+        font-size: 0.75rem;
+        font-weight: 500;
+        position: absolute;
+        border-radius: 3px;
+        left: 13px;
+        top: 13px;
+        text-align: center;
+        text-transform: capitalize;
+        z-index: 3;
+        padding: 0 10px;
+    }
 }

@@ -14,7 +14,15 @@
             </a>
         </div>
 
-        <div class="product__unavailable text-white" *ngIf="!product.inStock">Bán hết</div>
+        <div
+            class="product__label bg-primary text-white"
+            *ngIf="product.inStock">
+            Mới
+        </div>
+
+        <div class="product__unavailable text-white" *ngIf="!product.inStock">
+            Bán hết
+        </div>
     </div>
 
     <div class="product__caption">
