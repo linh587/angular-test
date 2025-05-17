@@ -1,17 +1,31 @@
 import { Injectable } from "@angular/core";
 import { Product } from "@models/product.model";
-import { Observable, of } from "rxjs";
+import { removeVietnameseTones } from "@utils/remove-tones.util";
+import { map, Observable, of } from "rxjs";
 import { PRODUCTS } from "../mocks/product.data";
 
 @Injectable({
     providedIn: "root",
 })
 export class ProductService {
-    getProducts(): Observable<Product[]> {
+    public getProducts(): Observable<Product[]> {
         return of(PRODUCTS);
     }
 
-    getProductById(id: number): Observable<Product | undefined> {
+    public getProductById(id: number): Observable<Product | undefined> {
         return of(PRODUCTS.find((p) => p.id === id));
+    }
+
+    public searchProductsByName(name: string): Observable<Product[]> {
+        const productName = removeVietnameseTones(name.trim().toLowerCase());
+        return this.getProducts().pipe(
+            map((products) =>
+                products.filter((p) =>
+                    removeVietnameseTones(p.name.toLowerCase()).includes(
+                        productName
+                    )
+                )
+            )
+        );
     }
 }

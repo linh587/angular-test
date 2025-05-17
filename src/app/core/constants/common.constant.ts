@@ -52,3 +52,11 @@ export const MOCK_SIZE_LIST = [
     { label: "XL", active: false },
     { label: "XXL", active: false },
 ];
+
+export const NAV_LIST = [
+    "Trang chủ",
+    "Danh mục",
+    "Sản phẩm",
+    "Giới thiệu",
+    "Khuyến mãi",
+];

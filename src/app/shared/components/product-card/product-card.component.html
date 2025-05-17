@@ -14,14 +14,14 @@
             </a>
         </div>
 
-        <div class="product__unavailable" *ngIf="!product.inStock">Bán hết</div>
+        <div class="product__unavailable text-white" *ngIf="!product.inStock">Bán hết</div>
     </div>
 
     <div class="product__caption">
         <h4 class="product__name">{{ product.name }}</h4>
         <div class="product__price-inner">
-            <span class="product__price"
-                >{{ product.price | formatPrice }}đ</span
+            <span class="product__price text-primary"
+                >{{ product.price | number : "1.0-0" }} VNĐ</span
             >
         </div>
     </div>

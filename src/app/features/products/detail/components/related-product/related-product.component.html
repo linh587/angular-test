@@ -5,7 +5,11 @@
 
     <div class="related__product-grid">
         <ng-container *ngFor="let product of products">
-            <product-card [product]="product"></product-card>
+            <product-card
+                [product]="product"
+                (directDetailEvent)="
+                    handleRedirectDetail($event)
+                "></product-card>
         </ng-container>
     </div>
 </div>

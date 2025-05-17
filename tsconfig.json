@@ -10,7 +10,8 @@
             "@models/*": ["./src/app/core/models/*"],
             "@directives/*": ["./src/app/shared/directives/*"],
             "@pipes/*": ["./src/app/shared/pipes/*"],
-            "@services/*": ["./src/app/core/services/*"]
+            "@services/*": ["./src/app/core/services/*"],
+            "@utils/*": ["./src/app/core/utils/*"]
         },
         "outDir": "./dist/out-tsc",
         "strict": true,

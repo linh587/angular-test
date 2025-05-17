@@ -21,12 +21,14 @@
 
         <div class="list__wrapper">
             <div class="list__grid">
-                <ng-container *ngFor="let product of products">
-                    <product-card
-                        [product]="product"
-                        (directDetailEvent)="
-                            handleRedirectDetail($event)
-                        "></product-card>
+                <ng-container *ngIf="products$ | async as products">
+                    <ng-container *ngFor="let product of products">
+                        <product-card
+                            [product]="product"
+                            (directDetailEvent)="
+                                handleRedirectDetail($event)
+                            "></product-card>
+                    </ng-container>
                 </ng-container>
             </div>
         </div>

@@ -1,29 +1,32 @@
-import { NgFor } from "@angular/common";
-import { Component, HostListener, inject } from "@angular/core";
+import { NgFor, NgIf } from "@angular/common";
+import { Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
+import { InputSearchComponent } from "@components/input-search/input-search.component";
+import { MobileMenuComponent } from "@components/mobile-menu/mobile-menu.component";
+import { NAV_LIST } from "src/app/core/constants/common.constant";
 
 @Component({
     selector: "app-header",
     templateUrl: "./header.component.html",
     styleUrls: ["./header.component.scss"],
     standalone: true,
-    imports: [NgFor],
+    imports: [NgFor, InputSearchComponent, MobileMenuComponent],
 })
 export class HeaderComponent {
-    public router = inject(Router);
+    private router = inject(Router);
 
-    NAV_LIST = [
-        "Trang chủ",
-        "Danh mục",
-        "Sản phẩm",
-        "Giới thiệu",
-        "Khuyến mãi",
-    ];
-    public menuFixed: boolean = false;
+    readonly NAV_LIST = NAV_LIST;
+    public isMenuOpen: boolean = false;
 
-    @HostListener("window:scroll") onWindowScroll() {
-        window.scrollY > 165
-            ? (this.menuFixed = true)
-            : (this.menuFixed = false);
+    public onRedirectList() {
+        this.router.navigate(["/"]).then();
+    }
+
+    public toggleMobileMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
+
+    public closeMobileMenu() {
+        this.isMenuOpen = false;
     }
 }

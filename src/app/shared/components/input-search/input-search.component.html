@@ -1,3 +1,54 @@
-<p>
-  input-search works!
-</p>
+<div class="search">
+    <div class="search__box">
+        <input
+            type="text"
+            placeholder="Tìm kiếm theo tên sản phẩm..."
+            [formControl]="searchTextControl"
+            (keydown.enter)="onSubmitSearch()"
+            (focus)="handleFocusInputElement()"
+            (focusout)="handleFocusOut()" />
+
+        <button
+            *ngIf="searchTextControl.value"
+            type="button"
+            class="search__clear-btn"
+            (click)="onClearSearch()"
+            aria-label="Clear search">
+            <span class="material-symbols-outlined"> close </span>
+        </button>
+        <div class="search__btn bg-primary">
+            <button (click)="onSubmitSearch()">
+                <span class="material-symbols-outlined text-white"> search </span>
+            </button>
+        </div>
+
+        <ul
+            class="search__suggestion"
+            *ngIf="suggestions.length > 0 && showSuggestion"
+            role="listbox">
+            <li
+                *ngFor="let product of suggestions"
+                class="search__suggestion-item"
+                (mousedown)="onSelectProduct(product)"
+                role="option"
+                tabindex="0">
+                <img [src]="product.image" alt="{{ product.name }}" />
+                <div class="search__suggestion-info">
+                    <p class="search__suggestion-name">{{ product.name }}</p>
+                    <p class="search__suggestion-price">
+                        {{ product.price | number : "1.0-0" }} VNĐ
+                    </p>
+                    <p
+                        class="search__suggestion-stock"
+                        [ngClass]="
+                            product.inStock
+                                ? 'search__in-stock'
+                                : 'search__out-stock'
+                        ">
+                        {{ product.inStock ? "Còn hàng" : "Hết hàng" }}
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

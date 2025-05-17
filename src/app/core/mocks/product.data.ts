@@ -8,6 +8,7 @@ export const PRODUCTS: Product[] = [
         price: 590000,
         description: "Áo khoác thời trang phong cách trẻ trung.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ export const PRODUCTS: Product[] = [
         price: 750000,
         description: "Thiết kế năng động, màu sắc hiện đại.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 3,
@@ -24,6 +26,7 @@ export const PRODUCTS: Product[] = [
         price: 1290000,
         description: "Túi xách thời trang, chất liệu da cao cấp.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 4,
@@ -32,6 +35,7 @@ export const PRODUCTS: Product[] = [
         price: 990000,
         description: "Đồng hồ thời trang, phù hợp công sở.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 5,
@@ -40,6 +44,7 @@ export const PRODUCTS: Product[] = [
         price: 450000,
         description: "Áo hoodie freesize, chất nỉ bông mềm.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 6,
@@ -48,6 +53,7 @@ export const PRODUCTS: Product[] = [
         price: 620000,
         description: "Chống sốc tốt, đựng vừa laptop 15 inch.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 7,
@@ -56,6 +62,7 @@ export const PRODUCTS: Product[] = [
         price: 199000,
         description: "Chất liệu cotton, thấm hút mồ hôi.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 8,
@@ -64,6 +71,7 @@ export const PRODUCTS: Product[] = [
         price: 420000,
         description: "Form skinny, phong cách cá tính.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 9,
@@ -72,6 +80,7 @@ export const PRODUCTS: Product[] = [
         price: 279000,
         description: "Túi gọn nhẹ, phù hợp đi chơi, du lịch.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 10,
@@ -80,6 +89,7 @@ export const PRODUCTS: Product[] = [
         price: 890000,
         description: "Thiết kế thời trang, đế cao 3cm.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 11,
@@ -88,6 +98,7 @@ export const PRODUCTS: Product[] = [
         price: 690000,
         description: "Balo đa năng, phong cách hiện đại.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 12,
@@ -96,6 +107,7 @@ export const PRODUCTS: Product[] = [
         price: 560000,
         description: "Chống gió, nhẹ, dễ phối đồ.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 13,
@@ -104,6 +116,7 @@ export const PRODUCTS: Product[] = [
         price: 799000,
         description: "Thiết kế khỏe khoắn, năng động.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 14,
@@ -112,6 +125,7 @@ export const PRODUCTS: Product[] = [
         price: 990000,
         description: "Chất liệu da mềm, form sang trọng.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 15,
@@ -120,6 +134,7 @@ export const PRODUCTS: Product[] = [
         price: 399000,
         description: "Túi nhỏ gọn cho các hoạt động ngoài trời.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 16,
@@ -128,6 +143,7 @@ export const PRODUCTS: Product[] = [
         price: 1250000,
         description: "Túi công sở cao cấp, nhiều ngăn tiện lợi.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 17,
@@ -136,6 +152,7 @@ export const PRODUCTS: Product[] = [
         price: 1150000,
         description: "Túi thời trang nữ, có thể đeo vai hoặc xách tay.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 18,
@@ -144,6 +161,7 @@ export const PRODUCTS: Product[] = [
         price: 489000,
         description: "Túi phong cách Hàn Quốc, đựng laptop vừa.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 19,
@@ -152,6 +170,7 @@ export const PRODUCTS: Product[] = [
         price: 430000,
         description: "Áo hoodie unisex form rộng.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 20,
@@ -160,6 +179,7 @@ export const PRODUCTS: Product[] = [
         price: 920000,
         description: "Đồng hồ thời trang, dây da cao cấp.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 21,
@@ -168,6 +188,7 @@ export const PRODUCTS: Product[] = [
         price: 1130000,
         description: "Dành cho nam, thiết kế sang trọng.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 22,
@@ -176,6 +197,7 @@ export const PRODUCTS: Product[] = [
         price: 580000,
         description: "Chất lượng âm thanh cao, bluetooth 5.0.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 23,
@@ -184,6 +206,7 @@ export const PRODUCTS: Product[] = [
         price: 1290000,
         description: "Tốc độ cao, kết nối USB 3.1.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 24,
@@ -192,6 +215,7 @@ export const PRODUCTS: Product[] = [
         price: 11900000,
         description: "Màn hình 15.6 inch, i5 Gen 11, SSD 512GB.",
         inStock: true,
+        brand: "Something 17",
     },
     {
         id: 25,
@@ -200,6 +224,7 @@ export const PRODUCTS: Product[] = [
         price: 199000,
         description: "Cotton mềm mịn, thấm hút tốt.",
         inStock: false,
+        brand: "Sai Gon Now",
     },
     {
         id: 26,
@@ -208,6 +233,7 @@ export const PRODUCTS: Product[] = [
         price: 640000,
         description: "Đậm chất street style, trẻ trung.",
         inStock: false,
+        brand: "Sai Gon Now",
     },
     {
         id: 27,
@@ -216,6 +242,7 @@ export const PRODUCTS: Product[] = [
         price: 850000,
         description: "Thiết kế sang trọng, khóa nam châm.",
         inStock: false,
+        brand: "Sai Gon Now",
     },
     {
         id: 28,
@@ -224,6 +251,7 @@ export const PRODUCTS: Product[] = [
         price: 1050000,
         description: "Chất da PU cao cấp, chống gió tốt.",
         inStock: false,
+        brand: "Sai Gon Now",
     },
     {
         id: 29,
@@ -232,6 +260,7 @@ export const PRODUCTS: Product[] = [
         price: 429000,
         description: "Tôn dáng, màu xanh basic dễ phối.",
         inStock: false,
+        brand: "Sai Gon Now",
     },
     {
         id: 30,
@@ -240,5 +269,6 @@ export const PRODUCTS: Product[] = [
         price: 289000,
         description: "Chống nắng nhẹ, chất vải mềm.",
         inStock: false,
+        brand: "Sai Gon Now",
     },
 ];

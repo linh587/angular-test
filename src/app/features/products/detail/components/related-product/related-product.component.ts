@@ -1,5 +1,6 @@
 import { NgFor } from "@angular/common";
 import { Component, inject, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { ProductCardComponent } from "@components/product-card/product-card.component";
 import { Product } from "@models/product.model";
 import { ProductService } from "@services/product.service";
@@ -13,6 +14,7 @@ import { ProductService } from "@services/product.service";
 })
 export class RelatedProductComponent implements OnInit {
     private productService = inject(ProductService);
+    private router = inject(Router);
 
     public products: Product[] = [];
 
@@ -24,5 +26,9 @@ export class RelatedProductComponent implements OnInit {
         this.productService.getProducts().subscribe((data) => {
             this.products = data.slice(0, 4);
         });
+    }
+
+    public handleRedirectDetail(productId: number) {
+        this.router.navigate([`/products/${productId}`]).then();
     }
 }

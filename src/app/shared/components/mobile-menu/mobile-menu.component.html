@@ -1,0 +1,24 @@
+<nav class="nav" [class.open]="isOpen">
+    <div class="nav__header border-bottom">
+        <div class="nav__header-logo" (click)="onRedirectList()">
+            <img src="/assets/images/logo.png" alt="logo" />
+        </div>
+        <button class="nav__header-close text-gray-600" (click)="handleClose()">
+            <span class="material-symbols-outlined"> close </span>
+        </button>
+    </div>
+    <div class="nav__body">
+        <ul class="border-bottom">
+            <li *ngFor="let item of NAV_LIST">
+                <a (click)="handleClose()">{{ item }}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="nav__footer">
+        <button class="nav__btn nav__btn-common">Đăng nhập</button>
+        <button class="nav__btn-outline nav__btn-common">Đăng ký</button>
+    </div>
+</nav>
+
+<div class="nav__overlay" *ngIf="isOpen" (click)="handleClose()"></div>

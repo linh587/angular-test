@@ -1,16 +1,16 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { PopularProductComponent } from "@features/products/detail/components/popular-product/popular-product.component";
-import { RelatedProductComponent } from "@features/products/detail/components/related-product/related-product.component";
-import { Product } from "@models/product.model";
-import { FormatPricePipe } from "@pipes/format-price.pipe";
 import { ProductService } from "@services/product.service";
+import { map, Observable, switchMap } from "rxjs";
 import {
     MOCK_SIZE_LIST,
     MOCK_THUMB_LIST,
 } from "src/app/core/constants/common.constant";
+import { PopularProductComponent } from "./components/popular-product/popular-product.component";
+import { RelatedProductComponent } from "./components/related-product/related-product.component";
 import { DetailTabComponent } from "./components/detail-tab/detail-tab.component";
+import { Product } from "@models/product.model";
 
 @Component({
     selector: "app-detail",
@@ -19,31 +19,25 @@ import { DetailTabComponent } from "./components/detail-tab/detail-tab.component
     standalone: true,
     imports: [
         CommonModule,
-        FormatPricePipe,
         RelatedProductComponent,
         PopularProductComponent,
         DetailTabComponent,
     ],
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent {
     private route = inject(ActivatedRoute);
     private router = inject(Router);
     private productService = inject(ProductService);
 
-    public MOCK_THUMB_LIST = MOCK_THUMB_LIST;
-    public MOCK_SIZE_LIST = MOCK_SIZE_LIST;
-    public product?: Product;
+    //
+    readonly MOCK_THUMB_LIST = MOCK_THUMB_LIST;
+    readonly MOCK_SIZE_LIST = MOCK_SIZE_LIST;
 
-    ngOnInit() {
-        this.getProductDetail();
-    }
-
-    private getProductDetail() {
-        const id = Number(this.route.snapshot.paramMap.get("id"));
-        this.productService
-            .getProductById(id)
-            .subscribe((p) => (this.product = p));
-    }
+    //
+    public product$: Observable<Product | undefined> = this.route.paramMap.pipe(
+        map((params) => Number(params.get("id"))),
+        switchMap((id) => this.productService.getProductById(id))
+    );
 
     public back() {
         this.router.navigate(["/products"]).then();

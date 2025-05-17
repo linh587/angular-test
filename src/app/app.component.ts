@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { Component, inject, OnInit } from "@angular/core";
+import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
 import { FooterComponent } from "@components/footer/footer.component";
 import { HeaderComponent } from "@components/header/header.component";
 
@@ -9,4 +9,19 @@ import { HeaderComponent } from "@components/header/header.component";
     standalone: true,
     imports: [HeaderComponent, FooterComponent, RouterOutlet],
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+    private router = inject(Router);
+
+    ngOnInit(): void {
+        this.scrollToTop();
+    }
+
+    private scrollToTop() {
+        this.router.events.subscribe((event) => {
+            if (!(event instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0);
+        });
+    }
+}
